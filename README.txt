@@ -290,8 +290,8 @@ _/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/
    | |  | > pressure data      |  |    changing pressure values over time at that spot should
    | |  | > from computed      |  |    allow us to create the sound heard by the the listener.
    | |  | > solutions          |  |
-   | |  |                      |  |   For this reason, there is a dedicated script to isolate   the varying values of pressure over time at a fixed
-   | |  |______________________|  |    the varying values of pressure over time at a fixedposition for each iterated solution.
+   | |  |                      |  |   For this reason, there is a dedicated script to isolate 
+   | |  |______________________|  |    the varying values of pressure over time at a fixed
    | |                            |    position for each iterated solution.           
    | |             ##             |    
    | |         :........:         |   [which is needed as, if you are looking at the author's
@@ -421,4 +421,5 @@ _/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/
 
    `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
       `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
+
 
