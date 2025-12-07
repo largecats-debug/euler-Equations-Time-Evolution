@@ -1,67 +1,117 @@
-  .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.  
- / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ 
-      `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   
-| |											      | | 
-			+----------------------------------------------+                      		      
-| |			|  +---------------------------------------+   |		      | |	
-			|  |  MATLAB R2025a                        |   |		      
-| |			|  | ------------------------------------- |   |		      | |
-			|  | +---+-------------------------------+ |   |		       		      
-| |			|  | |~~~|    Computation of periodic    | |   |		      | | 
-			|  | |~~~|    solutions for the 3 x 3    | |   |		       
-| |			|  | |~~~|  compressible Euler equations | |   |		      | |  
-			|  | |~~~|                               | |   |		        
-| |			|  | |~~~| [part of the dissertation of  | |   |		      | |  
-			|  | |~~~|   Andry Brinsko, University   | |   |		       
-| |			|  | |~~~|   of Massachusetts Amherst]   | |   |		      | |  
-			|  | +---+-------------------------------+ |   |		        
-| |			|  | |   | © Andry Brinsko, 2023-2025    | |   |		      | |  
-			|  | +---+-------------------------------+ |   |		       
-| |			|  +---------------------------------------+   |		      | |
-			+----------------------------------------------+		      
-| |       	        |\  +------------------------------------------+ \		      | |
-			\\  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__\ \		      
-| |	 		 \\  \___\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\____\ \		      | |
-	  		  \\  \___\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\ ___  \ \		      
-| |	   		   \\  \_____\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\ \_\ _\ \		      | |
-	    		    \\  \_\_\_\_\_\_\_________________\___\_\_\_\_ \ \		      
-| |	     		     \\  +-----------------------------------------+  \		      | |
-  	             	      \\                                               \	      
-| |               	       \\                                               \	      | |
-				\+----------------------------------------------+|	      
-| |		 		 ------------------------------------------------	      | |
+  .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   
+ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \
+      `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'
+| |											      											  				  | | 
+				+----------------------------------------------+                      		      
+| |				|  +---------------------------------------+   |		      		  		  	  		  	  | |	
+				|  |  MATLAB R2025a                        |   |		      
+| |				|  | ------------------------------------- |   |		      		  		   	  		  	  | |
+				|  | +---+-------------------------------+ |   |		       		      
+| |				|  | |~~~|    Computation of periodic    | |   |		      		  		   	  		 	  | | 
+				|  | |~~~|    solutions for the 3 x 3    | |   |		       
+| |				|  | |~~~|  compressible Euler equations | |   |	    ________________________________	  | |  
+				|  | |~~~|                               | |   |	   /                               /\
+| |				|  | |~~~| [part of the dissertation of  | |   |      / part of the dissertation of  _/ /\    | |  
+				|  | |~~~|   Andry Brinsko, University   | |   |	 /   Andry Brinsko, University    \/      
+| |				|  | |~~~|   of Massachusetts Amherst]   | |   |    /    of Massachusetts Amherst    / \	  | |  
+				|  | +---+-------------------------------+ |   |   /________________________________/ /       
+| |				|  | |   | © Andry Brinsko, 2023-2025    | |   |   \________________________________\/	      | |  
+				|  | +---+-------------------------------+ |   |	\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \	       
+| |				|  +---------------------------------------+   |		      		  		   	  		  	  | |
+				+----------------------------------------------+		    _________________________  
+| |       	    |\  +------------------------------------------+ \		   /\     © Andry Brinsko    \  	  | |
+				 \\  \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__\ \		  /_/\       2023-2025        \
+| |	 		 	  \\  \___\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\____\ \	    \/\________________________\      | |
+	  		  	   \\  \___\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\ ___  \ \	     \/________________________\      
+| |	   		   		\\  \_____\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\ \_\ _\ \		 / / / / / / / / / / / / / /      | |
+	    		     \\  \_\_\_\_\_\_\_________________\___\_\_\_\_ \ \		      
+| |	     		      \\  +-----------------------------------------+  \		      	  		   	      	  | |
+  	                   \\                                               \	      
+| |               	    \\                                               \	      	  		  	  		  	  | |
+					     \+----------------------------------------------+|	      
+| |		 		 		  ------------------------------------------------	      	  		   	  		  	  | |
 
-| |											      | |
-      .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.    
- \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / /
-  `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-' 
+| |											      											  		  		  | |
+      .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.   .-.-.  .-.-.   
+ \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / / \ \ / /  
+  `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'   `-`-'
 
-
-
- _.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-._.--.__.-'""`-.__.--.__.-'""`-._
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- "`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"`--'""`-.__.-'""`--'""`-.__.-'"
+For any questions or communications otherwise, send an emai
 
 
-      ._________________.       
-      |.---------------.|       	
-      ||   Running a   ||       	
-      ||  computation  ||          To run a computation of a periodic solution of the Euler
-      || of a solution ||          equations yourself, there is one main top-level script that
-      ||  on your own  ||          allows for the user to specify some of the main parameters
-      ||_______________||      	   of the problem at runtime:	
-      /.-.-.-.-.-.-.-.-.\       		
-     /.-.-.-.-.-.-.-.-.-.\      	     %% \Euler time evolution\TimeEvoMain.m %%
-    /.-.-.-.-.-.-.-.-.-.-.\     	
-   /______/__________\___o_\	
-   \_______________________/    
 
+ _.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-._.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-._
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+_/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7_/""7__/""7__/""7_
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ "`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"
 
-1. Upon running %% TimeEvoMain.m %% the user will first be asked to specify the number of dimensons 
-   to compute a solution in (in regards to the spatial domain)
+          /\
+         /  \
+       /_ %%=O=%     _____________        
+        %  - -%     |        '\\\\\\       
+   _____c%   > __   |        ' ____|_      
+  (_|. .  % ` % .'  |   +    '||::::::   To run a computation of a periodic solution of the Euler equations
+   ||. ___)%%%%_.'  |        '||_____|    yourself, there is one main top-level script that allows for the user
+   ||.(  \ ~ / ,)'  \'_______|_____|      to specify some of the main parameters of the problem at runtime:
+   || /|  \'/  |\   ___/____|___\___     
+  _,,,;!___*_____\_|    _    '  <<<:|     		%% \Euler time evolution\TimeEvoMain.m %% 
+ /     /|          |_________'___o_o| 
+/_____/ /   __________________________
+|:____|/   | Running a computation of |
+           |  a solution on your own  |
+            ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+	⚠ NOTE ⚠ Currently, it is up to you to manually set α, the scaling coefficient that
+	determines how big of a perturbation from background pressure we are starting with in
+
+		p^{(0)}(x,0) = \bar{p} + (α \bar{p}) φ_k
 	
-	Options: 1, 2, and 3 dimensions
+	When setting α, keep in mind that in the author's expierence, the code begins have a 
+	higher risk of breaking once α passes 0.4 to 0.5. This may seem rather slow for the code to
+	start falling apart, but such a perturbation from atmospheric background pressure already 
+	corresponds to painfully loud sounds, on the level of a chainsaw by a listener's ear.
+
+  .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
+   `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
+
+
+
+                  								|
+                 							   /‾\
+                							  |  :|`-._
+                							  |  :|`-._`-._
+               								 /   ::\   `-._`-._
+              								/     ::\      `-(_)
+             							   |_________|      / /
+                						      \  ,/        / /
+                 							   ‾‾         / /
+                           								 / /
+                          								/ /
+         							   ________________/,_&___________
+        							  /8P'      ________________ Y888/
+       								 /P'      /   A guide to   / Y8/
+      								/'  /\   /   the runtime  /   /
+     							   /  . \ \ / initialization /   /
+    						      /  //  \ \       process  /   /       |\      _,,,---,,_
+   								 /  //    \ \______________/   /        /,`.-'`'    -.  ;-;;,_
+  								/ ///      \_\        __      /        |,4-  ) )-,_..;\ (  `'-'
+ 							   /8 `'                 /_/    ./        '---''(_/--'  `-'\_)
+							  /88b._______________________.8/
+
+
+   `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
+      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
+
+ ____         _      ____     
+/\  _\      /' \    /\__ \    	   
+\ \ \/     /\_, \   \/_/\ \       Upon running %% TimeEvoMain.m %% the user will first be asked to
+ \ \ \     \/_/\ \     \ \ \       specify the number of dimensons to compute a solution in
+  \ \ \_      \ \ \     \_\ \      (in regards to the spatial domain)
+   \ \___\     \ \_\    /\___\
+    \/___/      \/_/    \/___/
+
+   Upon running %% TimeEvoMain.m %% the user will first be asked to specify the number of dimensons 
+   to compute a solution in (in regards to the spatial domain)
 
 
 	⚠ NOTE ⚠ As of 11/11/2025, only the 2D disc spatial domain is fully integrated into this
@@ -70,12 +120,16 @@
 
 		     %% \Euler time evolution\TwoD_Disk_TimeEvoMain.m %%
 
-
-   `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
-      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
-
-2. The user is prompted for the number of distinct entropy levels to use for the piecewise constant
-   entropy profile s(x)
+ .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
+   `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
+              
+ ____          ___       ____      
+/\  _\       /'___`\    /\__ \    
+\ \ \/      /\_\ /\ \   \/_/\ \      The user is prompted for the number of distinct entropy levels
+ \ \ \      \/_/// /__     \ \ \       to use for the piecewise constant entropy profile s(x)
+  \ \ \_       // /_\ \     \_\ \ 
+   \ \___\    /\______/     /\___\
+    \/___/    \/_____/      \/___/
 
 	Options: [nonisentropic] Choosing 2+ distinct entropy levels is valid for all spatial
                   dimensions. In this case, the user will be prompted to choose a background
@@ -93,12 +147,17 @@
 	⚠ NOTE ⚠ Again, as of 11/11/2025, only the 2D disc spatial domain is fully integrated into
                    this overhaul of the code that seeks to handle all cases from one main script
 
-  .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
-   `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
 
-
-3. [For the disc/annulus or the sphere] The user is then asked to indicate whether or not to use a
-   uniform discretization of the radial interval [0,R]
+  `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
+      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
+                                
+ ____         __       ____     
+/\  _\      /'__`\    /\__ \       [For the disc/annulus or the sphere] The user is then asked to
+\ \ \/     /\_\L\ \   \/_/\ \       indicate whether or not to use a uniform discretization of
+ \ \ \     \/_/_\_<_     \ \ \      the radial interval [0,R]
+  \ \ \_     /\ \L\ \     \_\ \ 
+   \ \___\   \ \____/     /\___
+    \/___/    \/___/      \/___/
 
 	Options: [uniform] Input 1 to use an equally spaced discretization of [0,R]. Using this
 		  option allows for the use of the usual Simpson's 1/3 rule, which we see as
@@ -117,12 +176,16 @@
 	⚠ NOTE ⚠ As of 11/28/2025, the polynomial nonuniform discretization is hard-coded in,
 		option to use exponential discretization in writing, soon to be added to code.
 
+  .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
+   `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
 
-   `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
-      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
-
-4. The user is prompted to specify the size of the eigenfunction bases to use (i.e. to specify
-   the size of the finite subset of the infinite dimensional eigenfunction bases to use)
+ ____      __ __        ____     
+/\  _\    /\ \\ \      /\__ \    
+\ \ \/    \ \ \\ \     \/_/\ \      The user is prompted to specify the size of the eigenfunction
+ \ \ \     \ \ \\ \_      \ \ \      bases to use (i.e. to specify the size of the finite subset of
+  \ \ \_    \ \__ ,__\     \_\ \     the infinite dimensional eigenfunction bases to use)
+   \ \___\   \/_/\_\_/     /\___\
+    \/___/      \/_/       \/___/
 
 	⚠ IMPORTANT ⚠ This is a very consequential choice, being one of the two sets of
 		     parameters that have the greatest effect on the runtime length. The other
@@ -152,12 +215,16 @@
 
    (GPU version of the code being debugged/worked on at the moment, to be included later)
 
-  .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
-   `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
-
-
-5. Next to be specified is the particular element of our (finite) eigenfunction basis to use as
-   our fixed k-mode in the solution.
+  `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
+      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
+                                
+ ____      ______      ____     
+/\  _\    /\  ___\    /\__ \    
+\ \ \/    \ \ \__/    \/_/\ \      Next to be specified is the particular element of our (finite)
+ \ \ \     \ \___``\     \ \ \      eigenfunction basis to use as our fixed k-mode in the solution.
+  \ \ \_    \/\ \L\ \     \_\ \ 
+   \ \___\   \ \____/     /\___\
+    \/___/    \/___/      \/___/
 
    These solutions are found by first setting our initial data to be the sum of some background
    pressure pBar and a chosen eigenfunction dubbed the k-mode:
@@ -168,9 +235,45 @@
 
 
 
+          ______________
+         /             /|
+        /             / |
+       /____________ /  |
+      |  _________  |   |____________________
+      | |         | |   |/        /|,       /|
+      | |     ..  | |   /        / /9      / |
+      | |  .      | |  /_______ / /9      /  |
+      | |_________| | |  ____ +| /9      /   |
+      |________++___|/|________|/9      /    |
+         ________________     ,9`      /   / |
+        /  -/      /-   /|  ,9        /   /| |
+       /______________ //|,9         /   / | |
+      |       ______  ||,9          /   /  | |
+      |  -+  |_9366_| ||/          /   /|  | |
+      |_______________|/__________/   / |  | |
+      /////----------/|           |  /__|  | |___
+      |o     o  \o|  \|           |  |  |  | |
+      |o    \|_  ||  o|______     |  |__|  | |_____
+      |o \_  |   ||  o|      |    |  |  |  | /
+      |o /   |\  /|  o|      |    |  |  |__|/
+      |o             o|      |    |  |
+      |o-------------o|      |    |  |
+      |o   /\/\      o|      |    |  |
+      |o  / o o|     o|      |    |  |
+      |o / \_+_/     o|      |    |  |
+      |o |\     \    o|      |    |  |
+      |o | |+ +-|    o|      |    |  |
+      |o-------------o|      |    |  |
+      |o     /|      o|      |    | /   
+       \/|/|/ |/\/|/\/       |____|/
+
+
+
+
 
  _.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-._.--.__.-'""`-.__.--.__.-'""`-._
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+_/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7__/""7_
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  "`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"`--'""`-.__.-'""`--'""`-.__.-'"
 
@@ -180,25 +283,23 @@
    | \___===__________________()_\
    | |                            |   
    | |   _______________________  |   The problem's parameters are already set so as to best
-   | |  |                      |  |   model air at sea level, at a temperature specified by
-   | |  | > Generating and     |  |   the user within the range [50F,80F]
+   | |  |       iTunes         |  |    model air at sea level, at a temperature specified by
+   | |  | > Generating and     |  |    the user within the range [50F,80F]
    | |  | > exporting sound    |  |
    | |  | > waves with         |  |   If we fix the position of a listener in the, then the
-   | |  | > pressure data      |  |   changing pressure values over time at that spot should
-   | |  | > from computed      |  |   allow us to create the sound heard by the the listener.
+   | |  | > pressure data      |  |    changing pressure values over time at that spot should
+   | |  | > from computed      |  |    allow us to create the sound heard by the the listener.
    | |  | > solutions          |  |
-   | |  |                      |  |   For this reason, there is a dedicated script to isolate
-   | |  |                      |  |   the varying values of pressure over time at a fixed
-   | |  |                      |  |   position for each iterated solution.
-   | |  |______________________|  |
-   | |                            |   [which is needed as, if you are looking at the author's
-   | |             ##             |    data packs, they include all variables except for the
-   | |         :........:         |    actual matrix of pressure values, which is too large
-   | |       --::......:---       |    to export in the default way. The pressure matrix
-   | |      ----::....:---==      |    can be successfully exported though, if desired, by
-   | |     ====--      =+++**     |    specifying -v7.3 when saving pNLMatrix]
-   | |     %%%%%%      %%%%%%     |
-   | |     **++==      :=++**     |   
+   | |  |                      |  |   For this reason, there is a dedicated script to isolate   the varying values of pressure over time at a fixed
+   | |  |______________________|  |    the varying values of pressure over time at a fixedposition for each iterated solution.
+   | |                            |    position for each iterated solution.           
+   | |             ##             |    
+   | |         :........:         |   [which is needed as, if you are looking at the author's
+   | |       --::......:---       |    data packs, they include all variables except for the
+   | |      ----::....:---==      |    actual matrix of pressure values, which is too large
+   | |     ====--      =+++**     |    to export in the default way. The pressure matrix
+   | |     %%%%%%      %%%%%%     |    can be successfully exported though, if desired, by
+   | |     **++==      :=++**     |    specifying -v7.3 when saving pNLMatrix]
    | |      =--:::....:--::-      |   
    | |       ::::......::--       |   Note that the generated audio can change a lot depending
    | |         :........:         |   on the position chosen to fix the "listener" at, this
@@ -207,66 +308,88 @@
     \|____________________________|
 
 
-1. Assuming you are not looking to run an entire computation yourself and instead will be using
-   precomputed data, start by loading in a saved data pack within
-
-	%\Euler time evolution\data packs
-
-
-   `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
-      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
-
-2. After all the variables have been loaded into your workspace, run the following script
-
-     %% \Euler time evolution\analysis\TwoD_Disk_TimeEvo_CreateFixedPositionProfiles.m %%
-
-  .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
-   `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
-
-
-3. The user will first be prompted to specify the location to fix the "listener" at, in terms
-   of a theta-index (between 1 and thetaPoints) and an r-index (between 1 and rPoints)
+ ____         _      ____       
+/\  _\      /' \    /\__ \      
+\ \ \/     /\_, \   \/_/\ \       Assuming you are not looking to run an entire computation
+ \ \ \     \/_/\ \     \ \ \       yourself and instead will be using precomputed data, start
+  \ \ \_      \ \ \     \_\ \      by loading in a saved data pack within
+   \ \___\     \ \_\    /\___\  
+    \/___/      \/_/    \/___/  		%% \Euler time evolution\data packs %%
 
 
    `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
       `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
 
-4. The user is next prompted to specify which iteration step to go up to when reconstructing
-   these fixed position pressure profiles (we start at step 0, and stop at the indicated step j)
+ ____          ___       ____     
+/\  _\       /'___`\    /\__ \    
+\ \ \/      /\_\ /\ \   \/_/\ \     
+ \ \ \      \/_/// /__     \ \ \     After all the variables have been loaded into your workspace,
+  \ \ \_       // /_\ \     \_\ \     run the script indicated below:
+   \ \___\    /\______/     /\___\   	
+    \/___/    \/_____/      \/___/
+
+     	%% \Euler time evolution\analysis\TwoD_Disk_TimeEvo_CreateFixedPositionProfiles.m %%
 
   .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
    `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
 
+                                
+ ____         __       ____     
+/\  _\      /'__`\    /\__ \    
+\ \ \/     /\_\L\ \   \/_/\ \     The user will first be prompted to specify the location to fix
+ \ \ \     \/_/_\_<_     \ \ \     the "listener" at, in terms of a theta-index
+  \ \ \_     /\ \L\ \     \_\ \    (between 1 and thetaPoints) and an r-index (between 1 and rPoints)
+   \ \___\   \ \____/     /\___\
+    \/___/    \/___/      \/___/
+                                
 
-5. This script creates the follow arrays:
-	(a) pressureProfilesFixedFullPeriod(1:timePoints,1:chosenIterationStep)
-	(b) pressureProfilesFixedFullPeriodNoBackground(1:timePoints,1:chosenIterationStep)
-   where the second array is, of course, the first but without the constant background pressure.
+   `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
+      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
+
+ ____      __ __        ____     
+/\  _\    /\ \\ \      /\__ \    
+\ \ \/    \ \ \\ \     \/_/\ \     The user is next prompted to specify which iteration step to
+ \ \ \     \ \ \\ \_      \ \ \     go up to when reconstructing these fixed position pressure
+  \ \ \_    \ \__ ,__\     \_\ \    profiles (we start at step 0, and stop at the indicated step j)
+    \/___/      \/_/       \/___/
+
+	This script creates the follow arrays:
+		(a) pressureProfilesFixedFullPeriod(1:timePoints,1:chosenIterationStep)
+		(b) pressureProfilesFixedFullPeriodNoBackground(1:timePoints,1:chosenIterationStep)
+   	where the second array is, of course, the first but without the constant background pressure.
    
    Although the actual computations are done to the half period T (for 2T-periodic functions),
    these pressure profiles are extended to the time grid [0, dt, 2dt, ..., T-dt] so that
    the profiles are ready to be analyzed with something like the FFT
 
+  .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
+   `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
 
-   `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
-      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
+ ____      ______      ____      
+/\  _\    /\  ___\    /\__ \      The script lastly prompts the user on whether or not to create
+\ \ \/    \ \ \__/    \/_/\ \      extended versions of these profiles for sound generation. 
+ \ \ \     \ \___``\     \ \ \     
+  \ \ \_    \/\ \L\ \     \_\ \   (typically the period of the computed solutions seems to be 
+   \ \___\   \ \____/     /\___\   measured in milliseconds, so to play as a sound many, many copies
+    \/___/    \/___/      \/___/    of the profile need to be added on)
 
-6. The script lastly prompts the user on whether or not to create extended versions of these 
-   profiles for the purposes of sound generation. 
-   (typically the period of the computed solutions seems to be measured in milliseconds, so to
-   play as a sound many, many copies of the profile need to be added on)
 
    If the user indicates that yes, they would like to make an extended copy of the profiles for 
    sound generation, the user will be prompted to input how many periods to make the extended
    versions. Good options seems to be 1024, 2048, or even 4096 periods, which can last anywhere
    from a second to a few seconds.
 
-  .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     .     
-   `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` `._.` 
 
+   `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
+      `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
 
-7. To save the soundwave corresponding to a specific profile (i.e. for a specific iteration step),
-   we usually input directly in the command window:
+ ____        ____      ____      
+/\  _\      /'___\    /\__ \     
+\ \ \/     /\ \__/    \/_/\ \     To save the soundwave corresponding to a specific profile
+ \ \ \     \ \  _``\     \ \ \     (i.e. for a specific iteration step), we usually input
+  \ \ \_    \ \ \L\ \     \_\ \    directly in the command window:
+   \ \___\   \ \____/     /\___\ 
+    \/___/    \/___/      \/___/ 
 
       	audiowrite('Nov_15_2025_K23Alpha004_Step0Audio2048.wav', ...
 		pressureProfileFixedExtendedResampled(:,1)/ ...
@@ -298,3 +421,4 @@
 
    `'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'`'. .'
       `     `     `     `     `     `     `     `     `     `     `     `     `     `     `     `  
+
